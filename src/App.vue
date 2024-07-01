@@ -27,7 +27,11 @@
        return this.$.store.state.education
      }
    },
- }
+     education() {
+       return this.$.store.state.experience
+     }
+   }
+ 
  </script>
  <style src="@/assets/css/styles.css">
 
