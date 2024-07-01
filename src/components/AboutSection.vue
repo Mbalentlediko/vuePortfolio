@@ -1,12 +1,11 @@
-<template>
   <template>
     <div class="container">
       <div class="row">
         <div class="col">
           <div id="details">
             <h1 class="display-1">About</h1>
-            <p v-if="experience">
-              <span>{{ experience }}</span>
+            <p v-if="experience?.length">
+              <span>{{ experience[0] }}</span>
             </p>
             <Spinner v-else />
           </div>
@@ -15,31 +14,18 @@
     </div>
   </template>
 
-  <script setup>
-    //Displays job title within an array , just like an animatuon
-    import Spinner from "./spinner.vue";
-    import { computed, onMounted, ref } from "vue";
-    import { useStore } from "vuex";
-    const store = useStore();
-    const experience = computed(() => store.state.experience);
-    // const title = ref("a software developer");
-    const cnt = ref(-1);
+<script setup>
+//Displays job title within an array , just like an animatuon
+import Spinner from "./spinner.vue";
+import { computed, onMounted } from "vue";
+import { useStore } from "vuex";
+const store = useStore();
+const experience = computed(() => store.state.about);
 
-    function repeat() {
-      try {
-        if (cnt.value == experience.value?.length) cnt.value = 0;
-        experience.value = experience.value?.at(cnt.value)?.experience;
-        setTimeout(repeat, 2000);
-        cnt.value++;
-      } catch (e) {
-        
-      }
-    }
-    onMounted(() => {
-      store.dispatch("fetchExperience");
-      repeat();
-    });
-  </script>
+onMounted(() => {
+  store.dispatch("fetchAbout");
 
-  <style></style>
-</template>
+});
+</script>
+
+<style></style>
