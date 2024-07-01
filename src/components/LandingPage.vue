@@ -16,7 +16,7 @@
               I am
               <span>{{ title }} </span>
             </p>
-            <!-- <spinner v-else /> -->
+            <spinner v-else />
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@
 
 <script setup>
 //Displays job title within an array , just like an animatuon
-// import spinner from "./spinner.vue";
+import spinner from "./spinner.vue";
 import { computed, onMounted, ref } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
