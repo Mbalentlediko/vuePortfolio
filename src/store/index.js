@@ -10,7 +10,8 @@ export default createStore({
     experiences: null,
     skills: null,
     testimonials: null,
-    projects: null
+    projects: null,
+    contact: null
   },
   getters: {
   },
@@ -35,6 +36,9 @@ export default createStore({
     },
     setProjects(state, value) { 
       state.projects = value
+    },
+    setContactInfo(state, value) { 
+      state.contact = value
     }
   },
   actions: {

@@ -25,16 +25,19 @@
      },
      education() {
        return this.$.store.state.education
-     }
-   },
-     education() {
-       return this.$.store.state.experience
+     },
+     testimonials() {
+       return this.$.store.state.testimonials
      },
      projects() {
        return this.$.store.state.projects
      }
-
-   }
+     },
+     ContactInfo() {
+       return this.$.store.state.ContactInfo
+     }
+    }
+   
  
  </script>
  <style src="@/assets/css/styles.css">
