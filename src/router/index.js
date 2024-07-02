@@ -26,7 +26,13 @@ const routes = [
     path: '/skills',
     name: 'skills',
     component: () => import( '../components/')
+  },
+  {
+    path: '/projects',
+    name: 'projects',
+    component: () => import( '../components/Projects.vue')
   }
+  
 ]
 
 const router = createRouter({

@@ -29,7 +29,11 @@
    },
      education() {
        return this.$.store.state.experience
+     },
+     projects() {
+       return this.$.store.state.projects
      }
+
    }
  
  </script>
