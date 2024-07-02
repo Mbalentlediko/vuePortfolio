@@ -11,7 +11,7 @@ export default createStore({
     skills: null,
     testimonials: null,
     projects: null,
-    contact: null
+    contactInfo: null
   },
   getters: {
   },
@@ -37,8 +37,8 @@ export default createStore({
     setProjects(state, value) { 
       state.projects = value
     },
-    setContactInfo(state, value) { 
-      state.contact = value
+    setContact(state, value){
+      state.contactInfo = value
     }
   },
   actions: {
@@ -114,7 +114,7 @@ export default createStore({
       } catch (e) { 
         Swal.fire({
           title: "Error",
-          text: "Failed to fetch data - testimonials",
+          text: "Failed to fetch data - Testimonials",
           icon: "error",
           timer: 2000
       })
@@ -128,6 +128,18 @@ export default createStore({
         Swal.fire({
           title: "Error",
           text: "Failed to fetch data - projects",
+          icon: "error",
+          timer: 2000
+        })
+      }
+    },async fetchContactInfo(context) {
+      try {
+        let { contactInfo } = await (await axios.get(portfolioURL)).data
+        context.commit("setContact", contactInfo)
+      } catch (e) { 
+        Swal.fire({
+          title: "Error",
+          text: "Failed to fetch data - contact",
           icon: "error",
           timer: 2000
         })

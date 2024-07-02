@@ -35,6 +35,9 @@
      },
      ContactInfo() {
        return this.$.store.state.ContactInfo
+     },
+     experiences() {
+       return this.$.store.state.experiences
      }
     }
    
