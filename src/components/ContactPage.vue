@@ -3,12 +3,12 @@
       <div class="row">
         <div class="col">
           <div id="contact">
-            <h1 class="display-1">Get in Touch</h1>
-            <p v-if="contactInfo">
+            <h1 class="display-1">Get in Touch with me </h1>
+            <p v-if="ContactInfo">
               <span>
-                {{ contactInfo.address }}<br>
-                {{ contactInfo.phone }}<br>
-                {{ contactInfo.email }}
+                {{ ContactInfo.address }}<br>
+                {{ ContactInfo.phone }}<br>
+                {{ ContactInfo.email }}
               </span>
             </p>
             <Spinner v-else/>
@@ -24,7 +24,7 @@
   import { useStore } from "vuex";
   
   const store = useStore();
-  const contactInfo = computed(() => store.state.contactInfo);
+  const ContactInfo = computed(() => store.state.ContactInfo);
   
   onMounted(() => {
     store.dispatch("fetchContactInfo");
@@ -32,5 +32,6 @@
   </script>
   
   <style>
-  /* Add your styles here */
+  
   </style>
+  
