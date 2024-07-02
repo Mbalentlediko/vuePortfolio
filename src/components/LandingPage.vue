@@ -3,7 +3,7 @@
       <div class="row vh-100 align-items-center">
         <div class="col">
           <img
-            src="https://mbalentlediko.github.io/Images/static/you.jpg"
+            src="https://mbalentlediko.github.io/Images/static/20240422_100655.jpg"
             alt="portfolio"
             loading="lazy"
             class="img-fluid w-75 shadow rounded-top"
