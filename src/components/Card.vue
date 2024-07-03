@@ -18,5 +18,8 @@ export default {
 <style scoped>
 .card {
   width: 18rem;
+  box-shadow: 5px 5px 20px rgb(157, 174, 5);
+  /* overflow: hidden; */
+  
 }
 </style>

@@ -5,12 +5,12 @@
           <div id="details">
             <h1 class="display-1">Testimonials</h1>
             <div class="row gap-4" v-if="testimonials?.length">
-              <CardComp v-for="(item, index) in testimonials" :key="index">
+              <CardComp v-for="(item, index) in testimonials" :key="index" >
                 <template #cardHeader>
                   <img :src="item.profile" alt="testimonial-img" />
                 </template>
                 <template #cardBody>
-                  <p>{{ item.name }} {{ item.surname }}</p>
+                  <p class="heading">{{ item.name }} {{ item.surname }}</p>
                   <p>{{ item.quotes }}</p>
                 </template>
               </CardComp>

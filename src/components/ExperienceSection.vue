@@ -9,7 +9,7 @@
               <template #cardHeader>
                 <img src="" alt="experience-img"> </template>
               <template #cardBody>
-                <p>{{ item.name }}</p>
+                <p class="heading">{{ item.name }}</p>
                 <p>{{ item.duty }}</p>
               </template>
             </CardComp>

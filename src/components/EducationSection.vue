@@ -9,7 +9,7 @@
               <template #cardHeader>
                 <img src="" alt="education-img"> </template>
               <template #cardBody>
-                <p>{{ item.place }}</p>
+                <p class="heading">{{ item.place }}</p>
                 <p>{{ item.year }}</p>
                 <p>{{ item.description }}</p>
               </template>

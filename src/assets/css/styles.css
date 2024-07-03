@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
 /* Bootstrap */
+
 /* app style */
 #app {
+  background-color:rgba(20, 131, 20, 0.527);   
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: lime;
 }
 
 .card{
@@ -55,7 +58,8 @@ img[alt="logo"] {
 /*section  */
 section {
   scroll-margin-block: 5rem;
-}
+  padding:50px;
+  }
 
 /*testimonial section*/
 img[alt="testimonial-img"]{
@@ -69,3 +73,33 @@ img[alt="testimonial-img"]{
     height: auto;
   }
 }
+ /* .card {
+  width: 18rem;
+  box-shadow: 5px 5px 20px rgb(117, 33, 33);
+
+  
+}  */
+#contact{
+  margin: 0;
+  padding: 0;
+  
+}
+/* .container{
+  background-color: #2c5049;
+} */
+::-webkit-scrollbar{
+  display:none ;
+}
+ */
+:is(.nav-link) {
+  color: gold; /* Change the text color to gold */
+  &:hover{
+      color: white;
+  }
+}
+.navbar, footer{
+  background-color: rgba(17, 122, 17, 0.285);
+  color: black;
+}
+
+ 

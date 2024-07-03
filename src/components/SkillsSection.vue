@@ -13,6 +13,7 @@
                   <p>{{ item.explanation }}</p>
                 </template>
               </CardComp>
+              <!-- {{ skills }} -->
             </div>
             <Spinner v-else />
           </div>

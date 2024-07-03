@@ -7,13 +7,13 @@
           <div class="row gap-4" v-if="projects?.length">
             <CardComp v-for="(item, index) in projects" :key="index">
               <template #cardHeader>
-                <img src="" alt="project-img" />
+                <img :src="item.image" alt="project-img" />
               </template>
               <template #cardBody>
                 <p>{{ item.name }}</p>
                 <p>{{ item.description }}</p>
                 <div class="d-flex justify-content-around buttons-box">
-                  <a class="btn" :href="gitHub" target="_blank" type="button">GitHub</a>
+                  <a class="btn" :href="gitHub" target="_blank" type="button"><i class="bi bi-github"></i></a>
                   <a class="btn" :href="netlify" target="_blank" type="button">Visit site</a>
                 </div>
               </template>
@@ -41,4 +41,11 @@ onMounted(() => {
 });
 </script>
 
-<style></style>
+<style scoped>
+img[alt="project-img"]{
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: contain;
+
+}
+</style>

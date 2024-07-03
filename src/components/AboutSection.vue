@@ -29,6 +29,13 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
+.container {
+  border: 5px solid lime;
+  background-color: rgb(145, 225, 145);
+  border-radius: 4rem;
+  padding: 10px;
+  margin-top: 20px;
+}
 
 </style>
