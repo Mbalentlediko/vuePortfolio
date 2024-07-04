@@ -17,9 +17,11 @@ export default {
 
 <style scoped>
 .card {
-  width: 18rem;
+  width: 20rem;
   box-shadow: 5px 5px 20px rgb(157, 174, 5);
+  color:yellow;
+  background-color: transparent;
   /* overflow: hidden; */
-  
+ 
 }
 </style>

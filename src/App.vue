@@ -23,8 +23,8 @@
       about() {
        return this.$.store.state.about
      },
-     education() {
-       return this.$.store.state.education
+     resume() {
+       return this.$.store.state.resume
      },
      testimonials() {
        return this.$.store.state.testimonials
@@ -35,9 +35,6 @@
      },
      ContactInfo() {
        return this.$.store.state.ContactInfo
-     },
-     experiences() {
-       return this.$.store.state.experiences
      }
     }
    

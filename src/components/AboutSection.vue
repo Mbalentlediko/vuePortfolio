@@ -6,7 +6,7 @@
             <div id="details">
                 <h1 class="display-1">About</h1>
                 <p v-if="about?.length">
-                    <span>{{ about[0] }}</span>
+                    <span >{{ about[0] }}</span>
                 </p>
                 <Spinner v-else/>
             </div>
@@ -31,11 +31,13 @@ onMounted(() => {
 
 <style scoped>
 .container {
-  border: 5px solid lime;
-  background-color: rgb(145, 225, 145);
+  border: 5px solid yellow;
+  background-color: white;
   border-radius: 4rem;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 40px;
+  margin-top: 150px;
+  width:400%;
+  height: 600px;
 }
 
 </style>

@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Wittgenstein:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
 /* Bootstrap */
 
 /* app style */
 #app {
-  background-color:rgba(20, 131, 20, 0.527);   
+  background-color:#000000f7;   
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: lime;
+  color: gold;
+  
 }
 
 .card{
@@ -25,11 +27,11 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #080808;
 }
 /* Universal selector */
 /* Custom variables */
@@ -51,10 +53,7 @@ img[alt="logo"] {
   display: grid;
   grid-template-rows: auto minmax(100dvh, 100%) auto;
 }
-:root {
-  --primary: black;
-  --secondary: ;
-}
+
 /*section  */
 section {
   scroll-margin-block: 5rem;
@@ -91,15 +90,38 @@ img[alt="testimonial-img"]{
   display:none ;
 }
  */
-:is(.nav-link) {
-  color: gold; /* Change the text color to gold */
-  &:hover{
-      color: white;
-  }
+
+
+h1{
+  font-family: "Italianno", cursive;
+  font: bold;
 }
-.navbar, footer{
-  background-color: rgba(17, 122, 17, 0.285);
-  color: black;
+/* .nav-item{
+  color: gold;
+} */
+.navbar,footer {
+  background-color: #333; /* Optional: background color for the navbar */
 }
 
- 
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: gold !important; /* Change color to gold */
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgb(129, 184, 11) !important; 
+}
+@keyframes rotateIn {
+  0% {
+    transform: rotate(-180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotate-in-enter-active {
+  animation: rotateIn 0.5s ease-out;
+}

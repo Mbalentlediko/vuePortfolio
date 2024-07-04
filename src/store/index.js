@@ -6,9 +6,9 @@ export default createStore({
   state: {
     jobTitle: null,
     about: null,
-    education: null,
-    experiences: null,
+    education:null,
     skills: null,
+    experiences: null,
     testimonials: null,
     projects: null,
     contactInfo: null
@@ -25,7 +25,7 @@ export default createStore({
     setEducation(state, value) { 
       state.education = value
     },
-    setExperience(state, value) { 
+    setExperiences(state, value) { 
       state.experiences = value
     },
     setSkills(state, value) { 
@@ -80,15 +80,14 @@ export default createStore({
           timer: 2000
         })
       }
-    },
-    async fetchExperience(context) {
+    },    async fetchExperiences(context) {
       try {
         let { experiences } = await (await axios.get(portfolioURL)).data
-        context.commit("setExperience", experiences)
+        context.commit("setExperiences", experiences)
       } catch (e) { 
         Swal.fire({
           title: "Error",
-          text: "Failed to fetch data - experience",
+          text: "Failed to fetch data - experiences",
           icon: "error",
           timer: 2000
         })
@@ -107,6 +106,7 @@ export default createStore({
         })
       }
     },
+ 
     async fetchTestimonials(context) {
       try {
         let { testimonials } = await (await axios.get(portfolioURL)).data
