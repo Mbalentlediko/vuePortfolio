@@ -15,13 +15,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .card {
-  width: 20rem;
-  box-shadow: 5px 5px 20px rgb(157, 174, 5);
-  color:yellow;
-  background-color: transparent;
+  width: 18rem;
+  box-shadow: 5px 5px 20px darkgray;
+  background: linear-gradient(to bottom right,#FFFF, #003459);
   /* overflow: hidden; */
- 
 }
 </style>

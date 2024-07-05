@@ -31,13 +31,15 @@ onMounted(() => {
 
 <style scoped>
 .container {
-  border: 5px solid yellow;
-  background-color: white;
+  border: 5px solid navy;
+  background-color: white; 
   border-radius: 4rem;
   padding: 40px;
   margin-top: 150px;
   width:400%;
   height: 600px;
+  color: blue;
+  
 }
 
 </style>

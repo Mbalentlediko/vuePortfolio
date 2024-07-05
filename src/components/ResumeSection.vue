@@ -5,48 +5,66 @@
         <div id="resume">
           <h1 class="display-1">Resume</h1>
 
-
           <!-- Education Section -->
           <section>
-            <h3 class="display-2">Education</h3>
+            <h3 class="display-3">Education</h3>
             <div class="row gap-4" v-if="education?.length">
-              <CardComp v-for="item in education" :key="item.id">
-                <template #cardHeader>
+              <div
+                v-for="item in education"
+                :key="item.id"
+                data-aos="flip-right"
+              >
+                <div class="card poject-card">
                   <img :src="item.image" alt="education-img" />
-                </template>
-                <template #cardBody>
+                  <div class="">
                   <p class="heading">{{ item.place }}</p>
                   <p>{{ item.year }}</p>
                   <p>{{ item.description }}</p>
-                </template>
-              </CardComp>
+                </div>
+                </div>
+            </div>
             </div>
             <Spinner v-else />
           </section>
 
           <!-- Skills Section -->
           <section>
-            <h3 class="display-2">Skills</h3>
+            <h3 class="display-3">Skills</h3>
             <div class="row gap-4" v-if="skills?.length">
-              <CardComp v-for="item in skills" :key="item.title">
-                <template #cardHeader>
+              <div class="card project-card skill-card"
+                v-for="item in skills"
+                :key="item.title"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+              >
+                <div>
                   <p>{{ item.title }}</p>
-                </template>
-                <template #cardBody>
+                </div>
+                <div>
                   <p>{{ item.explanation }}</p>
-                </template>
-              </CardComp>
+                </div>
+            </div>
             </div>
             <Spinner v-else />
           </section>
 
           <!-- Experience Section -->
           <section>
-            <h3 class="display-2">Experience</h3>
+            <h3 class="display-3">Experience</h3>
             <div v-if="experiences?.length">
-              <CardComp v-for="(item, index) in experiences" :key="index">
+              <CardComp
+                v-for="(item, index) in experiences"
+                :key="index"
+                data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000"
+              >
                 <template #cardHeader>
-                  <img src="https:mbalentlediko.github.io/Images/static/lca.jpg" alt="experience-img" />
+                  <img
+                    src="https:mbalentlediko.github.io/Images/static/lca.jpg"
+                    alt="experience-img"
+                  />
                 </template>
                 <template #cardBody>
                   <p class="heading">{{ item.name }}</p>
@@ -56,7 +74,6 @@
             </div>
             <Spinner v-else />
           </section>
-
         </div>
       </div>
     </div>
@@ -83,10 +100,19 @@ onMounted(() => {
 
 <style scoped>
 .container {
-  padding: 20px;
+  padding: 10px;
 }
 
-h1.display-1, h2.display-2 {
+.skill-card{
+  height: 15rem;
+}
+
+.card{
+  width: 25rem;
+}
+
+h1.display-1,
+h2.display-2 {
   margin-bottom: 20px;
 }
 
@@ -97,5 +123,6 @@ h1.display-1, h2.display-2 {
 .heading {
   font-weight: bold;
 }
-</style>
 
+
+</style>

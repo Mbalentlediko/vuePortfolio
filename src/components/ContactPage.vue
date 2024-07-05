@@ -1,68 +1,157 @@
 <template>
-  <div class="container contact-container">
-    <div class="row mt-5">
-      <div class="col">
-        <div id="contact">
-          <h1 class="display-1">Get in Touch with me </h1>
-          <div v-if="contact?.length">
-            <p>{{ contact[0].address }}</p>
-            <p>{{ contact[0].phone }}</p>
-            <p>{{ contact[0].email }}</p>
-            <h2>Or you can leave a message</h2>
-            <div>
-              <form action=" ">
-                <input type="text" placeholder="name">
-                <input type="text" placeholder="email">
-                <input type="text" placeholder="Message">
-                <button type="submit">Send</button>
-              </form>
-            </div>
-          </div>
-          <Spinner v-else/>
-        </div>
-      </div>
+  <h1 class="display-1">Reach me</h1>
+  <div class="contact row">
+    <div class="col-md-6">
+      <h1 class="contact-title">Contact Me</h1>
+      <p data-aos="zoom-in-up">
+        <a class="contact-icon"
+          ><i class="bi bi-telephone-fill mx-2"></i> 083 564 5479
+        </a>
+      </p>
+      <p data-aos="zoom-in-up">
+        <a class="contact-icon"
+          ><i class="bi bi-envelope mx-2"></i>dikombalentle9@gmail.com
+        </a>
+      </p>
+      <p data-aos="zoom-in-up">
+        <a
+          class="contact-icon"
+          target="_blank"
+          href="https://github.com/Mbalentlediko"
+          ><i class="bi bi-github mx-2"></i> GitHub</a
+        >
+      </p>
     </div>
+
+    <form @submit.prevent="submitForm" class="col-md-6">
+      <h2 class="message">You can leave me a message</h2>
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" v-model="form.fullName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" v-model="form.email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" v-model="form.message" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </template>
 
-<script setup>
-import Spinner from "./spinner.vue";
-import { computed, onMounted } from "vue";
-import { useStore } from "vuex";
+<script>
+import Swal from "sweetalert2";
 
-const store = useStore();
-const contact = computed(() => store.state.contactInfo);
-
-onMounted(() => {
-  store.dispatch("fetchContactInfo");
-});
+export default {
+  data() {
+    return {
+      form: {
+        fullName: "",
+        email: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    async submitForm() {
+      if (!this.form.fullName || !this.form.email || !this.form.message) {
+        await Swal.fire({
+          icon: "error",
+          title: "Form Incomplete",
+          text: "Please fill out all fields.",
+          background: "#FFCCCC",
+          color: "#333",
+        });
+        return;
+      }
+      await Swal.fire({
+        icon: "success",
+        title: "Message successfully sent",
+        text: "Thank you for the message",
+        background: "#CCFFCC",
+        color: "#333",
+      });
+      this.resetForm();
+    },
+    resetForm() {
+      this.form.fullName = "";
+      this.form.email = "";
+      this.form.message = "";
+    },
+  },
+};
 </script>
 
-<!-- <style scoped>
-.contact-container {
-  border: 5px solid lime; /* Outer container border */
-  background-color: rgb(145, 225, 145); /* Background color of the outer container */
-  border-radius: 4rem; /* Border radius of the outer container */
-  padding: 0;
-  margin-top: 20px;
+<style scoped>
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-#contact {
-  border: 2px solid lime; /* Inner contact section border */
-  padding: 10px; /* Padding inside the contact section */
+.container-fluid {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
 }
 
-#contact h1,
-#contact p,
-#contact h2,
-#contact input,
-#contact button {
-  color: #32CD32; /* Different shade of lime for content */
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-#contact input,
-#contact button {
-  display: block;
-  margin: 10px 0; /* Margin for form elements */
+.message {
+  margin-bottom: 20px;
+  text-align: center;
 }
-</style> -->
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: grey; /* Changed to grey */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkgrey; /* Darker grey on hover */
+}
+</style>

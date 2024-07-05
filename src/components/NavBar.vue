@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container-fluid">
             <router-link class="navbar-brand" to="/">
                 <img src="https://mbalentlediko.github.io/Images/static/md logo.jpg" alt="logo" class="img-fluid"
@@ -17,9 +17,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about"> <i class="bi bi-file-person-fill"></i>About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education"> <i class="bi bi-backpack4-fill"></i>Education</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#resume"> <i class="bi bi-file-earmark-person"></i>Resume</a>

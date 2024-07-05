@@ -4,12 +4,14 @@
 
 /* app style */
 #app {
-  background-color:#000000f7;   
+  
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: gold;
+  color: white;
+    
   
 }
 
@@ -18,11 +20,29 @@
 }
 
 .buttons-box a{
-  border: 1px solid;
+  border: 2px solid;
 }
 
 nav {
   padding: 30px;
+
+  & ul{
+    & a.nav-link{
+      color: white;
+      background-color: #2b2c68;
+      margin: 1rem;
+      box-shadow: .1vw .1vw .1vw white;
+      transition: all 1s;
+      &:hover{
+        color: #338aca;
+        box-shadow: unset;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
 }
 
 nav a {
@@ -94,22 +114,24 @@ img[alt="testimonial-img"]{
 
 h1{
   font-family: "Italianno", cursive;
-  font: bold;
+  color: white;
+  /* font: bold; */
 }
 /* .nav-item{
   color: gold;
 } */
 .navbar,footer {
-  background-color: #333; /* Optional: background color for the navbar */
+  /* background-color: rgba(0, 0, 128, 0.675); */
+  padding: 30px;
 }
 
 .navbar-brand,
 .navbar-nav .nav-link {
-  color: gold !important; /* Change color to gold */
+  color:white !important; 
 }
 
 .navbar-nav .nav-link:hover {
-  color: rgb(129, 184, 11) !important; 
+  color: rgb(193, 218, 218) !important; 
 }
 @keyframes rotateIn {
   0% {
@@ -122,6 +144,18 @@ h1{
   }
 }
 
-.rotate-in-enter-active {
-  animation: rotateIn 0.5s ease-out;
+ .wrapper{
+  background: linear-gradient(to bottom right,#191834, #2b2c68,  #338aca,  #61bdaf) 
+ }
+img[alt='portfolio'] {
+  border-radius: 80px ;
+   
+}
+
+
+/*contact section*/
+
+.contact-icon{
+  color: white;
+  text-decoration: none;
 }

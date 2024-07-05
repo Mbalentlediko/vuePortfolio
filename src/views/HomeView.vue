@@ -9,13 +9,13 @@
     <section class="row" id="resume">
       <ResumeSection/>
     </section>
-    <section class="row" id="projects">
+    <section class="row" id="project">
       <Projects/>
     </section>
-    <section class="row" id="testimonial">
+    <section class="row" id="testimonials">
       <TestimonialsSection />
     </section>
-    <section class="row" id="contact">
+    <section class="row" id="reachMe">
       <ContactPage />
     </section>
    </div>
