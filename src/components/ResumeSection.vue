@@ -1,37 +1,30 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col">
         <div id="resume">
           <h1 class="display-1">Resume</h1>
 
           <!-- Education Section -->
-          <section>
             <h3 class="display-3">Education</h3>
             <div class="row gap-4" v-if="education?.length">
-              <div
-                v-for="item in education"
-                :key="item.id"
-                data-aos="flip-right"
-              >
-                <div class="card poject-card">
+
+                <div class="card project-card" v-for="item in education"
+                :key="item.id" data-aos="flip-right">
                   <img :src="item.image" alt="education-img" />
-                  <div class="">
-                  <p class="heading">{{ item.place }}</p>
-                  <p>{{ item.year }}</p>
-                  <p>{{ item.description }}</p>
+                  <div>
+                    <p class="heading">{{ item.place }}</p>
+                    <p>{{ item.year }}</p>
+                    <p>{{ item.description }}</p>
+                  </div>
                 </div>
-                </div>
-            </div>
-            </div>
+              </div>
             <Spinner v-else />
-          </section>
 
           <!-- Skills Section -->
           <section>
             <h3 class="display-3">Skills</h3>
             <div class="row gap-4" v-if="skills?.length">
-              <div class="card project-card skill-card"
+              <div
+                class="card project-card skill-card"
                 v-for="item in skills"
                 :key="item.title"
                 data-aos="flip-left"
@@ -44,7 +37,7 @@
                 <div>
                   <p>{{ item.explanation }}</p>
                 </div>
-            </div>
+              </div>
             </div>
             <Spinner v-else />
           </section>
@@ -74,8 +67,6 @@
             </div>
             <Spinner v-else />
           </section>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -103,11 +94,11 @@ onMounted(() => {
   padding: 10px;
 }
 
-.skill-card{
+.skill-card {
   height: 15rem;
 }
 
-.card{
+.card {
   width: 25rem;
 }
 
@@ -123,6 +114,4 @@ h2.display-2 {
 .heading {
   font-weight: bold;
 }
-
-
 </style>
